@@ -1,6 +1,8 @@
 import * as THREE from "three";
 // import * as url from "./imgs/earthmap1k.jpg"
 import { TDSLoader } from "three/examples/jsm/loaders/TDSLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 
 
 window.addEventListener("DOMContentLoaded", init);
@@ -22,6 +24,8 @@ function init() {
     // create a camera
     const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
     camera.position.set(0, 0, 5);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
 
     // create a sphere
     // const geometry = new THREE.SphereGeometry(300, 30, 30);
